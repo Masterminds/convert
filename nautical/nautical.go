@@ -1,3 +1,4 @@
+// Nautical math conversions.
 package nautical
 
 // Convert meters into nautical miles.

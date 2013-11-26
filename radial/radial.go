@@ -1,3 +1,4 @@
+// Radial math conversions.
 package radial
 
 import (
