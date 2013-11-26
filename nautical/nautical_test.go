@@ -4,13 +4,13 @@ import (
 	"testing"
 )
 
-const MaxDiff float64 = 0.0000001
+const maxDiff float64 = 0.0000001
 
 func diff(a, b float64) bool {
 	if a > b {
-		return (a - b) > MaxDiff
+		return (a - b) > maxDiff
 	}
-	return (b - a) > MaxDiff
+	return (b - a) > maxDiff
 }
 
 func TestConvertNautical(t *testing.T) {
