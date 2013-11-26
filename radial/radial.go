@@ -5,11 +5,11 @@ import (
 )
 
 // Convert degrees to radians.
-func Deg2rad(deg float64) float64 {
+func DegToRad(deg float64) float64 {
 	return (deg * math.Pi) / 180
 }
 
 // Convert radians to degrees.
-func Rad2deg(rad float64) float64 {
+func RadToDeg(rad float64) float64 {
 	return (rad * 180) / math.Pi
 }
