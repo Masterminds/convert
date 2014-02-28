@@ -2,7 +2,7 @@
 
 Convert is a collection of mathematical conversion functions.
 
-[![Build Status](https://travis-ci.org/Masterminds/convert.png?branch=master)](https://travis-ci.org/Masterminds/convert) [![GoDoc](http://godoc.org/github.com/Masterminds/convert?status.png)](http://godoc.org/github.com/Masterminds/convert)
+[![Build Status](https://travis-ci.org/Masterminds/convert.png?branch=master)](https://travis-ci.org/Masterminds/convert) [![GoDoc](http://godoc.org/github.com/Masterminds/convert?status.png)](http://godoc.org/github.com/Masterminds/convert) [![Coverage Status](https://coveralls.io/repos/Masterminds/convert/badge.png?branch=master)](https://coveralls.io/r/Masterminds/convert?branch=master)
 
 ## Current Support
 
