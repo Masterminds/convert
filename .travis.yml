@@ -19,8 +19,8 @@ script:
   - go test -v -covermode=count -coverprofile=color.part ./color
   - go test -v -covermode=count -coverprofile=nautical.part ./nautical
   - go test -v -covermode=count -coverprofile=radial.part ./radial
-  - echo "mode: count" >coverage.out
-  - grep -h -v "mode: count" *.part >>coverage.out
+  - 'echo "mode: count" >coverage.out'
+  - 'grep -h -v "mode: count" *.part >>coverage.out'
   - ~/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken=$COVERALLS_TOKEN
 
 env:
