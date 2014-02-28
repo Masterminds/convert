@@ -10,9 +10,18 @@ before_script:
   - go get code.google.com/p/go.tools/cmd/cover
   - go get github.com/hailiang/goveralls
 
+# Doing the test coverage piece part until Go supports it natively. See
+# http://code.google.com/p/go/issues/detail?id=6909 for more details.
+# script:
+#   - go test -v -covermode=count -coverprofile=profile.cov ./...
+#   - ~/gopath/bin/goveralls -coverprofile=profile.cov -service=travis-ci -repotoken=$COVERALLS_TOKEN
 script:
-  - go test -v -covermode=count -coverprofile=profile.cov ./...
-  - ~/gopath/bin/goveralls -coverprofile=profile.cov -service=travis-ci -repotoken=$COVERALLS_TOKEN
+  - go test -v -covermode=count -coverprofile=color.part ./color
+  - go test -v -covermode=count -coverprofile=nautical.part ./nautical
+  - go test -v -covermode=count -coverprofile=radial.part ./radial
+  - echo "mode: count" >coverage.out
+  - grep -h -v "mode: count" *.part >>coverage.out
+  - ~/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken=$COVERALLS_TOKEN
 
 env:
   global:
