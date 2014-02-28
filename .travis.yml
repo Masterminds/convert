@@ -1,8 +1,19 @@
 language: go
 
 go:
-  - 1.1
   - 1.2
 
 notifications:
   irc: "irc.freenode.net#masterminds"
+
+before_script:
+  - go get code.google.com/p/go.tools/cmd/cover
+  - go get github.com/hailiang/goveralls
+
+script:
+  - go test -v -covermode=count -coverprofile=profile.cov ./...
+  - ~/gopath/bin/goveralls -coverprofile=profile.cov -service=travis-ci -repotoken=$COVERALLS_TOKEN
+
+env:
+  global:
+    secure: "TEF+xU1ZocKNZVSxiYOGLoVy3VLo67j9XsvvNAdKCHcBDT1gwZzkA4JeAM7NoOcLthNSYLLMbY2LofdYnCe2U93OVbCnm8za6CltouII1W9y0wEq+1DM7tnK2nBDQQBlqUo3qDgvICN7GcRa4oml8oGkf1pXgjooHjMCzIddKHw="
