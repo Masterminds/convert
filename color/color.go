@@ -10,9 +10,15 @@ import (
 // HexToRGB converts a hexadecimal color value to RGB. The hex value can
 // optionally begin with a # which is common in web environments. The hex value
 // can be either 3 or 6 characters long. For example, both #FFF and #FFFFFF are
-// acceptable. #FFF will be expanded to #FFFFFF.
-// The returned values are designed to be used with the color package. For
-// example, you can do foo := color.RGBA{r, g, b, 255}.
+// acceptable. #FFF will be expanded to #FFFFFF. The returned values are designed
+// to be used with the color package. For example:
+//
+// 		// The color package here is aliased to ccolor
+// 		r, g, b, err := ccolor.HexToGRB("#FFFFFF")
+// 		if err != nil {
+// 			// There was a problem.
+// 		}
+// 		foo := color.RGBA{r, g, b, 255}
 func HexToRGB(hex string) (r, g, b uint8, err error) {
 	// In many representations (e.g., web) there is a # prefixing the value.
 	hex = strings.TrimPrefix(hex, "#")
