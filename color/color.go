@@ -44,7 +44,7 @@ func HexToRGB(hex string) (r, g, b uint8, err error) {
 		tmpVal, err = strconv.ParseInt(tmpString+tmpString, 16, 0)
 		b = uint8(tmpVal)
 	} else {
-		err = errors.New("convert.color: The length of the hexadecimal string passed to HexToRGB is invalid.")
+		err = errors.New("convert.color: The length of the hexadecimal string passed to HexToRGB is invalid")
 	}
 
 	return
